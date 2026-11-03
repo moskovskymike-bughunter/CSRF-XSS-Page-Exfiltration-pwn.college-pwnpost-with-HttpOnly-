@@ -47,8 +47,9 @@ Start the attacker's HTTP server:
 
 ```bash
 python3 -m http.server 1337 > server.log 2>&1 &
+```
 
-2. Craft the Payload
+### 2. Craft the Payload
 
 Create index.html in the directory served by the attacker's server. The script dynamically builds an XSS payload, encodes it, and redirects the bot to the vulnerable endpoint.
 html
@@ -69,6 +70,7 @@ html
 </script>
 </body>
 </html>
+```
 
 Why this works:
 
@@ -83,6 +85,7 @@ Why this works:
 3. Trigger the Bot
 
 Submit http://hacker.localhost:1337 to the admin bot (via the challenge interface or /challenge/victim).
+
 4. Capture the Page
 
 The bot visits the attacker's page, is redirected to /ephemeral?msg=..., and the reflected XSS executes as the admin. The payload fetches /, and the resulting HTML is sent to the attacker's server:
