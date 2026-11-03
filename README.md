@@ -1,12 +1,5 @@
 # CSRF → XSS → Page Exfiltration (pwn.college "pwnpost" with HttpOnly)
 
-СМС через facesms не дойдет
-
-Here's the writeup reformatted as a clean GitHub Markdown file — with proper headings, code fences, a table of contents, and the content kept intact:
-markdown
-
-# CSRF → XSS → Page Exfiltration (pwn.college "pwnpost" with HttpOnly)
-
 ## Table of Contents
 
 - [Description](#description)
