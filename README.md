@@ -63,7 +63,7 @@ Create `index.html` in the directory served by the attacker's server. The script
 </script>
 </body>
 </html>
-```
+``` 
 
 **Why this works:**
 
