@@ -1,13 +1,8 @@
-# CSRF-XSS-Page-Exfiltration-pwn.college-pwnpost-with-HttpOnly-
-CSRF → XSS → Page Exfiltration (pwn.college "pwnpost" with HttpOnly)
-
 # CSRF → XSS → Page Exfiltration (pwn.college "pwnpost" with HttpOnly)
 
 ## Description
 
 The "pwnpost" Flask application has a **Reflected XSS** vulnerability in the `/ephemeral` endpoint. Because the application lacks CSRF protection, an attacker can force an authenticated admin bot to visit a malicious page. This page redirects the bot to the vulnerable endpoint, where JavaScript executes **in the admin's session**.
-
-In this variant, the session cookie is marked **`HttpOnly`**, so `document.cookie` cannot read it. However, the XSS can still `fetch()` pages **in the same origin**, and the browser will automatically attach the `HttpOnly` cookie to those requests. The attacker therefore exfiltrates the **rendered page** (which contains the flag for the admin) rather than the cookie itself.
 
 In this variant, the session cookie is marked **`HttpOnly`**, so `document.cookie` cannot read it. However, the XSS can still `fetch()` pages **in the same origin**, and the browser will automatically attach the `HttpOnly` cookie to those requests. The attacker therefore exfiltrates the **rendered page** (which contains the flag for the admin) rather than the cookie itself.
 
