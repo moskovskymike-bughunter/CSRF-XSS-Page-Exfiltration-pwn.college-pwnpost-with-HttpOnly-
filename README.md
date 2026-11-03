@@ -102,7 +102,7 @@ No CSRF Protection: The application does not validate Origin or Referer headers.
 
 HttpOnly is not a complete defense: While HttpOnly prevents JavaScript from reading the cookie, it does not prevent the browser from sending the cookie with same-origin requests. XSS in the same origin can therefore still act on the victim's behalf.
 
-Remediation
+## Remediation
 
     Escape Output: Use markupsafe.escape to sanitize the msg parameter.
 
