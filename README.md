@@ -9,6 +9,8 @@ The "pwnpost" Flask application has a **Reflected XSS** vulnerability in the `/e
 
 In this variant, the session cookie is marked **`HttpOnly`**, so `document.cookie` cannot read it. However, the XSS can still `fetch()` pages **in the same origin**, and the browser will automatically attach the `HttpOnly` cookie to those requests. The attacker therefore exfiltrates the **rendered page** (which contains the flag for the admin) rather than the cookie itself.
 
+In this variant, the session cookie is marked **`HttpOnly`**, so `document.cookie` cannot read it. However, the XSS can still `fetch()` pages **in the same origin**, and the browser will automatically attach the `HttpOnly` cookie to those requests. The attacker therefore exfiltrates the **rendered page** (which contains the flag for the admin) rather than the cookie itself.
+
 ## Impact
 
 **Critical.** An attacker can:
